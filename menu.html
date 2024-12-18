@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>menu</title>
+    <style>
+        body {
+            height: auto;
+            background: linear-gradient(135deg, #ffffff, #dfeecf);
+            /* background-color: #dfeecf; */
+        }
+
+        .col:hover {
+            margin-top: -5px;
+            cursor: pointer;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+        }
+
+        .btn-success:hover {
+            background-color: white;
+            color: black;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            box-shadow: 0 1rem 3rem rgba(black, .175);
+            text-decoration: none;
+            font-family: "Poppins", sans-serif;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        h1 h4 h5 {
+            text-transform: capitalize;
+        }
+
+        /* Header */
+
+        header {
+            z-index: 2;
+            width: 100%;
+            height: auto;
+            /* background-image: url(images/icon1.avif); */
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            padding: 10px 20px;
+            /* background-color: #4CAF50; */
+        }
+
+        .nav-item img.logo {
+            height: 80px;
+            margin-right: 600px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
+        .nav-link:hover {
+            color: burlywood;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            list-style: none;
+            padding: 10px 0;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-item {
+            color: black;
+            padding: 5px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-item:hover {
+            background-color: burlywood;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-item img.logo {
+                height: 60px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-item img.logo {
+                margin-bottom: 15px;
+            }
+        }
+
+        /* header end */
+
+
+
+        /* footer */
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        footer p {
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        footer p:hover {
+            color: burlywood;
+        }
+
+        footer a:hover {
+            color: burlywood;
+        }
+
+        /* footer end */
+
+        /* first row */
+
+        .row1 {
+            background-image: url(images/icon1.avif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 550px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .row1 h1 {
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .hm-text {
+            color: white;
+            position: relative;
+            padding-top: 150px;
+            font-size: 70px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* first row end */
+
+        /* second row */
+
+        .row2 {
+            background-image: url(images/indoor\ bulbs.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+            margin-top: 100px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .m-img {
+            height: 70px;
+            width: 70px;
+            margin-top: -20px;
+            margin-left: -100px;
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            border: 2px solid black;
+            align-content: center;
+        }
+
+        .m-img:hover {
+            border: 1px solid green;
+        }
+
+        .row2 li {
+            margin-top: 50px;
+            margin-left: 260px;
+            padding: 20px;
+        }
+
+        .row2 li a {
+            text-decoration: none;
+            list-style: none;
+            color: black;
+            font-size: larger;
+
+        }
+
+        .row2 li a:hover {
+            color: green;
+        }
+
+        /* second row end */
+
+        /* third row */
+
+        .row3 {
+            text-align: center;
+            margin-top: 100px;
+            padding-bottom: 50px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .row3-heading {
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .row3 h4 {
+            color: green;
+            margin: 20px;
+        }
+
+        .row3 p {
+            margin: 20px;
+        }
+
+        .tool-img {
+            position: relative;
+            height: 300px;
+            width: 300px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .tool-video {
+            position: relative;
+            height: 300px;
+            width: 300px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .row {
+            height: auto;
+        }
+
+        /* third row end */
+
+        /* fourth row */
+
+        .row4 {
+            text-align: center;
+            margin-top: 100px;
+            padding-bottom: 50px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .row4-heading {
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .row4 h4 {
+            color: green;
+            margin: 20px;
+        }
+
+        .row4 p {
+            margin: 20px;
+        }
+
+        /* fourth row end */
+
+        /* row 5 */
+
+        .row5 {
+            text-align: center;
+            margin-top: 100px;
+            padding-bottom: 50px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .row5-heading {
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .row5 h4 {
+            color: green;
+            margin: 20px;
+        }
+
+        .row5 p {
+            margin: 20px;
+        }
+
+        /* row 5 end */
+
+        /* row 6*/
+
+
+        .row6 {
+            text-align: center;
+            margin-top: 100px;
+            padding-bottom: 50px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .row6-heading {
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .row6 h4 {
+            color: green;
+            margin: 20px;
+        }
+
+        .row6 p {
+            margin: 20px;
+        }
+
+        /* row 6 end */
+    </style>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <nav class="navbar">
+            <ul class="nav justify-content-end mt-4">
+                <li class="nav-item">
+                    <img class="logo" src="images/onlinelogomaker-110524-2348-9012-2000-transparent.png" alt="Logo"
+                        style="height: 50px;">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="menu.html" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Menu
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#tool">Tools</a></li>
+                        <li><a class="dropdown-item" href="#soil">Soil and Fertilizer</a></li>
+                        <li><a class="dropdown-item" href="#pesticides">Pesticides for Plants</a></li>
+                        <li><a class="dropdown-item" href="#seed">Seed Details</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="shop.html" role="button" >
+                        Shop
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="shop.html">Pots & Wall Hangings</a></li>
+                        <li><a class="dropdown-item" href="shop.html">Accessories</a></li>
+                        <li><a class="dropdown-item" href="shop.html">Books</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="finalproject.html">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="FAQ.html">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- row 1 -->
+    <div class="container-fluid row1">
+        <div class="hm">
+            <h1 class="hm-text">MENU<br>Garden World</h1>
+        </div>
+    </div>
+
+    <!-- row 2 -->
+
+    <div class="container-fluid row2">
+        <ul class="list-group">
+            <li list-group-item><a href="#tool"><img src="images/tools icon.jfif" class="img-fluid m-img"
+                        alt="">Tools</a></li><br>
+            <li list-group-item><a href="#soil"><img src="images/soi; icon.png" class="img-fluid m-img" alt="">Soil and
+                    Fertilizer</a></li><br>
+            <li list-group-item><a href="#pesticides"><img src="images/pesticides icon.png" class="img-fluid m-img"
+                        alt="">Pesticides for Plants</a></li><br>
+            <li list-group-item><a href="#seed"><img src="images/seed icon.jfif" class="img-fluid m-img" alt="">Seed
+                    Details</a></li><br>
+        </ul>
+    </div>
+    </div>
+
+    <!-- row 3 -->
+
+    <div class="container-fluid row3">
+        <div class="container-fluid text-center">
+            <span class="anchor" id="tool"></span>
+            <h1 class="row3-heading">12 Essential Garden Tools for the Beginner</h1>
+            <h5>It’s easy to go overboard when purchasing landscaping tools. They can take up a lot space and cost a lot
+                of money, but staying focused on the basics can keep your shed or storage area from becoming
+                overcrowded. There’s always bigger and better, but buying the best quality tools that your budget will
+                allow, and maintaining them, can go a long way in getting the most out of your investment.
+
+                Here are 12 essential garden tools to get you going on any garden project you have in mind:</h5>
+            <h4>1. Gloves</h4>
+            <div class="row">
+                <div class="col"><img src="images/gloves1.avif" class="img-fluid tool-img" alt="..."></div>
+                <div class="col"><video src="images/using gloves.mp4" class="tool-video" autoplay controls
+                        muted></video></div>
+            </div>
+            <p>While gardening can be a wonderful hobby, it can quickly turn into a thorny and splintery hassle without
+                the right pair of gloves.<br>
+                * Gloves should be durable but not too bulky, especially for working with seeds or transplanting
+                seedlings.<br>
+                * Fit is important, as poorly fitting gloves can cause blisters or result in accidents from slipping
+                off.<br>
+                * Fabrics that are water resistant, but also breathable, will help keep hands cool and comfortable.<br>
+                * Longer cuffs protect wrists and forearms from scratches and keep soil from getting in.<br>
+                * Store gloves out of sunlight, away from water and safe from insects.</p>
+            <h4 data-aos="fade-up" data-aos-delay="200">2. Pruning Shears</h4>
+            <div class="row">
+                <div class="col"><img src="images/pruning shears.webp" class="img-fluid tool-img" alt="..."></div>
+                <div class="col"><video src="images/using pruning shears.mp4" class="tool-video" autoplay controls
+                        muted></video></div>
+            </div>
+            <p>Hand pruners, also called secateurs, help reign in plants that are getting out of control and taking
+                over. Anvil-style pruners cut with a sharp blade meeting a flat surface, similar to a knife on a board.
+                Bypass pruners cut with a sharp blade passing by a sharp-edged flat surface, more like scissors.<br>
+                * Anvil pruners are best for dead wood and can cause crush injuries to fresh, green stems and
+                branches.<br>
+                * Bypass pruners are better for live plants and green wood.<br>
+                * Pruners should fit easily in the palm of your hand.<br>
+                * Ratcheting pruners provide increased cutting strength, perfect for anyone with reduced hand strength
+                or arthritis.<br>
+                * For cleaner cuts and less injury to plants, pruners should be sharpened regularly. (See Garden Tool
+                Care & Maintenance for more).<br>
+                For an anvil-style pruning tool, Hovercamp recommends ratcheting pruners. The increased strength from
+                the ratcheting action makes cutting through thicker or harder branches easier.</p>
+            <h4>3. Loppers</h4>
+            <div class="row">
+                <div class="col"><img src="images/loppers.avif" class="img-fluid tool-img" alt="..."></div>
+            </div>
+            <p>Another cutting tool, loppers are basically long-handled pruners used to trim hard to reach areas and cut
+                thicker branches. The long handles provide the leverage it takes to cut through branches up to an inch
+                or more in diameter. There are anvil and bypass types, just like pruners. Handles generally range from
+                16 to 36 inches.<br>
+                * Bypass loppers are more precise in cut location than anvil style.<br>
+                * Longer handled loppers can be heavy. Know what you’ll be cutting and how far you’ll need to reach and
+                get the appropriate length.<br>
+                * Lightweight aluminum or carbon-composite handles can be lighter.<br>
+                * Like pruners, keep lopper blades in good condition and sharpen regularly.<br>
+                For anvil-style loppers, our editors recommend the Tabor Tools GG12 Anvil Lopper. It can cut branches up
+                to 2 inches in diameter and is perfect for dry or woody growth. The carbon steel blade stays sharp,
+                making cutting easy.</p>
+            <h4>4. Garden Fork</h4>
+            <div class="row">
+                <div class="col"><img src="images/garden fork.webp" class="img-fluid tool-img" alt="..."></div>
+                <div class="col"><video src="images/using garden fork.mp4" class="tool-video" autoplay controls
+                        muted></video></div>
+            </div>
+            <p>An efficient tool for turning soil, garden forks can dig into dense soil better than a spade.<br>
+                * Forks with a slight curve to the spines are useful for scooping mulch or turning compost piles, much
+                like a pitchfork.<br>
+                * Straight tines are better for digging; great for compacted, rocky, or clay soil.<br>
+                * Square tines are stronger than flat tines which can bend when they hit a rock or root.<br>
+                Landscape designer Genevieve Schmidt recommends the Radius Garden 203 Pro Ergonomic Steel Digging Fork.
+                The stainless steel, square tines resist rusting and the ergonomic handle has a non-slip grip. </p>
+            <h4>5. Hand Trowel</h4>
+            <div class="row">
+                <div class="col"><img src="images/trowel.webp" class="img-fluid tool-img" alt="..."></div>
+                <div class="col"><video src="images/hand trowel.mp4" class="tool-video" autoplay controls muted></video>
+                </div>
+            </div>
+            <p>The essential hand tool, trowels are wonderful for transplanting bedding plants and herbs, planting
+                containers, and taking out weeds.<br>
+                * Select a broad blade to move more soil or a long, narrow blade to dig up weeds or for rocky soil.<br>
+                * The handle should fit comfortably in your hand.<br>
+                * Trowels forged from stainless steel, or at least with a stainless steel head, are more durable and
+                will last longer.<br>
+                * Schmidt also recommends the Garrett Wade Tulip Trowel. Its sharp blades cut through stubborn roots
+                with ease, making it ideal for planting bulbs or planting around trees.</p>
+            <h4>6. Spade</h4>
+            <div class="row">
+                <div class="col"><img src="images/spade.avif" class="img-fluid tool-img" alt="..."></div>
+                <div class="col"><video src="images/using spade.mp4" class="tool-video" autoplay controls muted></video>
+                </div>
+            </div>
+            <p>These short-handled square shovels are garden workhorses. They make easy work of digging holes for
+                plants, edging, lifting sod, and moving small mounds of dirt from one area to another. This tool can be
+                more on the pricey side, but a good spade will last you the rest of your gardening life.<br>
+                * Treads on top of the blade give a sturdier and more comfortable foot surface when needing an extra
+                push.<br>
+                * Ash hardwood handles are durable and absorb shock and vibration.<br>
+                * Generally available with long or short handles. Longer handles provide more leverage, but are
+                heavier.<br>
+                * Stainless steel heads are strong and won’t rust.<br>
+                Executive director of the Coastal Maine Botanical Gardens William Cullina recommends the King of Spades
+                Model 38 Balling Spade.It has a virtually unbreakable handle made from alloy tubing and a heat-treated
+                blade with a sharp edge.</p>
+            <h4>7. Rake</h4>
+            <div class="row">
+                <div class="col"><img src="images/rake.avif" class="img-fluid tool-img" alt="..."></div>
+                <div class="col"><video src="images/using rake.mp4" class="tool-video" autoplay controls muted></video>
+                </div>
+            </div>
+            <p>When leaves and debris fall, your sturdy rake is there to whisk them away. Rakes come in a wide variety
+                of styles and sizes, but a great starter is a standard leaf rake.<br>
+                * Adjustable rakes do the job of more than one tool, reaching into narrow areas or gathering large piles
+                of leaves.<br>
+                * Steel tines are stronger and may be rougher on delicate lawns than plastic tines.<br>
+                Our editors recommend the Tabor Tools Adjustable Metal Rake. The rake head expands from 8 to 23 inches,
+                and when stored in the collapsed position, it takes up less room than a standard rake. </p>
+            <h4>8. Hoe</h4>
+            <div class="row">
+                <div class="col"><img src="images/hoe.webp" class="img-fluid tool-img" alt="..."></div>
+                <div class="col"><video src="images/using hoe.mp4" class="tool-video" autoplay controls muted></video>
+                </div>
+            </div>
+            <p>Your type of garden will dictate what type of hoe is best for you. A veggie garden may require a sturdy,
+                wide hoe. If you have perennial gardens, a more delicate touch and a thinner hoe may be required. Hoes
+                are useful in preparing garden and flower beds and cutting down weeds.<br>
+                * Look for a comfortable handle with a long reach.<br>
+                * A sharp blade works better and is easier to use.<br>
+                * Weeding hoes, also called hula or stirrup hoes, have an open square head and are pushed back and forth
+                just under the soil surface to cut down top growth.<br>
+                * Flat hoes are good for turning the soil in rows in vegetable gardens.<br>
+                Our editors recommend the Rogue Garden Hoe 575G. It has a high-grade tempered steel head that holds its
+                sharp edge well. It is sharpened on 3 sides so it can be used at all angles.</p>
+            <h4>9. Garden Hose with Adjustable Nozzle</h4>
+            <div class="row">
+                <div class="col"><img src="images/Garden Hose.webp" class="img-fluid tool-img" alt="..."></div>
+                <div class="col"><video src="images/using Garden Hose.mp4" class="tool-video" autoplay controls
+                        muted></video></div>
+            </div>
+            <p>Water is the foundation of your garden’s life and it’s important that your garden hose can reach and
+                spray every area. There are three basic hose diameters: ½-inch (avg 9 gal per minute), 5/8-inch (avg 15
+                gal per minute), and ¾-inch (up to 25 gal per minute).<br> An adjustable nozzle puts you in control of
+                the water pressure and spray radius.<br>
+                * Estimate the amount of length you will need with your hose before buying one.<br>
+                * Hose length will affect water pressure - the longer the hose, the lower the resulting pressure.<br>
+                * Vinyl hoses are lighter weight and less expensive, but kink easier and don’t last as long as rubber
+                construction.<br>
+                * Store hoses coiled up and out of direct sunlight. Storing with kinks in them can result in weak
+                spots.<br>
+                Schmidt also recommends the Tuff-Guard Hose and Bon Aire Ultimate Hose Nozzle. The Tuff-Guard hose is
+                flexible, strong, and resists kinking. She suggests that it be stored on a hose hanger or manual hose
+                reel. The Bon Aire Ultimate Hose Nozzle is light weight and has a shut-off at either end of the spray
+                range. The fire-hose-style nozzle goes from a light flow to a drenching shower, and can be used for
+                cleaning concrete when adjusted to a nearly solid stream.</p>
+            <h4>10. Watering Wand</h4>
+            <div class="row">
+                <div class="col"><img src="images/Watering Wand.webp" class="img-fluid tool-img" alt="..."></div>
+                <div class="col"><video src="images/using Watering Wand.mp4" class="tool-video" autoplay controls
+                        muted></video></div>
+            </div>
+            <p>Give your plants a gentle rain shower with a water-breaking wand. The extended reach is also helpful to
+                get to out-of-the-way containers, hanging plants, or the back edges of borders. Watering wands come in a
+                variety of lengths, from 10 to 48 inches.<br>
+                * Choose an appropriate length for your needs - longer for high hanging baskets, shorter for tighter
+                spaces.<br>
+                * Built-in shut off valves in the handle conserve water and allow you to adjust the flow.<br>
+                Kitchen gardener and cookbook author Jeanne Kelley recommends the Dramm One-Touch Rain Wand. The angled
+                arm allows you to reach under foliage of delicate plants and also reach into hanging baskets. The valve
+                slides easily with just the thumb.</p>
+            <h4>11. Watering Can</h4>
+            <div class="row">
+                <div class="col"><img src="images/Watering Can.avif" class="img-fluid tool-img" alt="..."></div>
+                <div class="col"><video src="images/using Watering Can.mp4" class="tool-video" autoplay controls
+                        muted></video></div>
+            </div>
+            <p>There are 2 basic types of watering cans, plastic or metal. There are hundreds of styles, colors, sizes
+                and nozzle options.<br>
+                * Plastic cans can be lighter than metal, but won’t last as long.<br>
+                * Metal cans should be galvanized to resist rusting.<br>
+                * Consider the size of the can relative to your strength, a gallon of water weighs just over 8
+                pounds.<br>
+                * The handle position should allow you to carry a full can and also tip it to pour easily.<br>
+                * Two-handled designs allow for better stability for children or elderly gardeners.<br>
+                * You may need two: a larger one with a sprinkler head for outdoors, and a smaller, long-necked version
+                for houseplants.<br>
+                For outdoor use, our editors recommend the Bloem Deluxe Watering Can with a dual-handle design and
+                removable sprinkle nozzle. It’s BPA free and has a 2.5-gallon capacity.</p>
+            <h4>12. Wheelbarrow</h4>
+            <div class="row">
+                <div class="col"><img src="images/Wheelbarrow.webp" class="img-fluid tool-img" alt="..."></div>
+                <div class="col"><video src="images/using Wheelbarrow.mp4" class="tool-video" autoplay controls
+                        muted></video></div>
+            </div>
+            <p>If your backyard has extra soil to be moved around, compost or mulch that needs to be added to garden
+                beds, or any other heavy lifting and moving project, a wheelbarrow can help you haul hundreds of
+                pounds!<br>
+
+                * Traditional dual-handle, single wheel styles can be harder to balance heavy or unevenly distributed
+                loads.<br>
+                * Single-handle two-wheel models are easier to balance, better for those with limited strength or when
+                pulling over uneven terrain.<br>
+                * Single-handled wheelbarrows can be pushed or pulled with one hand.<br>
+                * Keep the wheels inflated properly for easier wheeling.<br>
+                Our editors recommend the Garden Star Garden Barrow. At just 29 pounds overall, The dual wheels and
+                single handle make it easy to push, pull, and dump.</p>
+        </div>
+    </div>
+
+    <!-- row 4  -->
+
+    <div class="container-fluid row4">
+        <div class="container-fluid text-center">
+            <span class="anchor" id="soil"></span>
+            <h1 class="row4-heading">Garden Soil and Fertillizer</h1>
+            <h1>Garden Soil</h1>
+            <h5>Gardeners often disregard the impact soil has on the health and vigor of their plants. Soil preparation
+                isn’t the most thrilling aspect of planting a garden, but it’s certainly one of the most important. If
+                your soil isn’t right, your garden will struggle to reach its full potential.<br>“A garden is a
+                reflection of the quality of its soil. Gardens filled with beautiful soil have a vitality about them
+                that we can almost feel,” says landscape designer and author Jan Johnsen.<br>
+                <img src="images/soil.jpg" class="img-thumbnail" alt=""><br>Achieving that vitality requires
+                understanding the chemistry and composition of your soil and creating the perfect environment for
+                fertile plant growth. Good soil management is a continual process, but once you attend to the basics,
+                your soil will do most of the work itself.
+            </h5>
+            <h1>GARDEN FERTILIZER</h1>
+            <h5>Anyone who has gardened knows that plants need nourishment in order to be healthy and thrive. In
+                residential landscapes, Mother Nature needs a little help from gardeners to replace depleted nutrients.
+                Since plants have different needs and there are many different types of fertilizers, knowing when and
+                how to fertilize can be daunting. Here’s some basic information to help you better understand what type
+                of fertilizer(s) your garden needs.</h5>
+            <img src="images/garden-fertillizer.jpg" class="img-thumbnail" alt="">
+           
+        </div>
+    </div>
+
+    <!-- row 4 end -->
+
+    <!-- row 5 -->
+
+    <div class="container-fluid row5" data-aos="fade-right">
+        <div class="container-fluid text-center">
+            <span class="anchor" id="pesticides"></span>
+            <h1 class="row5-heading" data-aos="zoom-in" data-aos-delay="100">Pesticides For Plants</h1>
+            <h5 data-aos="fade-up" data-aos-delay="200">All gardeners, whether beginners or seasoned pros, deal with
+                pests, diseases, and problems in their gardens. Some problems can be merely annoying, while others can
+                cause major damage. Here are solutions for safely and naturally dealing with some common garden
+                problems.</h5>
+            <h1>How to Get Rid of Powdery Mildew</h1>
+            <img src="images/powdery-mildew.jpg" class="img-thumbnail" alt=""><br>
+            <p>Powdery mildew is a common fungus that affects a wide variety of plants. It is easily identified and appears as light grey or white powdery spots usually found on infected leaves, but can also be foundunderneath, or on stems, flowers, fruit or vegetables. The spots spread and will eventually cover mostof the leaves on the plant, with new plant growth being most susceptible.<br>
+            <h1>Why Are My Tomato Plant Leaves Turning Yellow?</h1>
+            <img src="images/yellow-leaves.jpg" class="img-thumbnail" alt=""><br>
+            <h5>Whether you're just starting out with vegetable gardening or consider yourself a pro, you may have
+                encountered a nagging problem when growing tomatoes. Why are your tomato plant leaves turning
+                yellow?<br>
+
+                Start by figuring out whether the yellow leaves indicate a larger problem. In certain cases yellow
+                tomato leaves can be normal, here are two examples:<br></h5>
+
+           <h1>How to Prevent & Treat Anthracnose</h1>
+            <img src="images/anthracnose.jpg " class="img-thumbnail" alt="...">
+            <h5>If you love growing tomatoes and peppers during the summer, one disease you should be on the watch for
+                is anthracnose, an aggressive fungal disease that not only targets some of your favorite garden crops,
+                but also a wide range of other plants, including trees, ornamental shrubs, flowers, and even
+                houseplants.
+
+                Like many fungal diseases, anthracnose is more common during periods of high humidity and frequent
+                rainfall.</h5>
+            
+            <h1>How to Treat & Prevent Black Spot on Roses</h1>
+            <img src="images/black-spot.jpg " class="img-thumbnail" alt="...">
+            <h5>If rose growers had a public enemy number one, it would surely be black spot—a menacing fungal disease
+                that poses a threat to roses. Once black spot disease begins attacking your roses, it can be very
+                difficult to control and manage. Here are some tips for controlling black spot and how to minimize its
+                impact on the health, beauty, and longevity of your plants.</h5>
+           
+           
+        </div>
+    </div>
+
+    <!-- row 5 end -->
+
+    <!-- row 6 -->
+
+    <div class="container-fluid row6" data-aos="fade-right">
+        <div class="container-fluid text-center">
+            <span class="anchor" id="seed"></span>
+            <h1 class="row6-heading" data-aos="zoom-in" data-aos-delay="100">How to Grow Your Own Plants From Seed</h1>
+            <img src="images/grow plants.jpg " class="img-thumbnail" alt="...">
+            <h5 data-aos="fade-up" data-aos-delay="200">As more people turn to gardening as a hobby or to grow their own
+                food, they’ve also discovered the rewards of growing plants from seed. It’s easy to become addicted to
+                watching life sprout from a tiny seed that you’ve nurtured yourself. Starting seeds indoors allows you
+                to get a head start on the growing season and to get your hands dirty, even if there’s still snow on the
+                ground.<br>
+
+                Many vegetables, annuals, and perennials are easy to grow from seed. It’s more economical than
+                purchasing nursery starts and allows you to start plants early such as tomatoes and peppers that take
+                longer to mature. Many unusual and heirloom varieties are only available from seed, so it’s a good way
+                to insure you get the varieties you want. Here’s how to get started.</h5>
+            
+        </div>
+    </div>
+
+
+    <!-- row 6 end -->
+
+
+
+
+    <!-- footer -->
+
+    <footer class="container-fluid">
+        <ul class="nav justify-content-center mt-4">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="finalproject.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+        <p>&copy; 2024 Garden World | All Rights Reserved</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+    </footer>
+
+    <!-- footer end -->
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

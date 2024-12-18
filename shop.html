@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Page</title>
+    <style>
+        body{
+            background: linear-gradient(135deg, #ffffff, #abd87a);
+            margin: 0;
+            padding: o;
+        }
+
+
+        .card:hover{
+            cursor: pointer;
+        }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    height: 60px; 
+}
+
+.navbar .logo img {
+    height: 100%;
+    width: auto; 
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: burlywood;
+}
+
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: burlywood;
+    color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .logo {
+        height: 40px; 
+    }
+}
+
+.header-card {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.header-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.header-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s;
+}
+
+.header-card:hover img {
+    transform: scale(1.1);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    width: 90%;
+    margin: auto;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) rotateY(15deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+.info {
+    padding: 20px;
+    text-align: center;
+}
+
+.info h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.discount {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.buy-now {
+    padding: 10px 20px;
+    margin-top: 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.buy-now:hover {
+    background: #006400;
+    transform: scale(1.05);
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 40px;
+    color: #4CAF50;
+}
+
+.book-section,
+.accessory-section {
+    padding: 40px 20px;
+}
+
+
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+footer ul.nav {
+    padding: 0;
+    list-style: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+footer .nav-item .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+footer .nav-item .nav-link:hover {
+    color: #dff9d8;
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer p a {
+    color: white;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+footer p a:hover {
+    color: #dff9d8;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    footer ul.nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    footer .nav-item .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/onlinelogomaker-110524-2348-9012-2000-transparent.png" alt="">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="menu.html" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="menu.html">Tools</a></li>
+                        <li><a href="menu.html">Soil and Fertilizer</a></li>
+                        <li><a href="menu.html">Pesticides for Plants</a></li>
+                        <li><a href="menu.html">Seed Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="shop.html" class="dropdown-toggle">Shop</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#pots">Pots & Wall Hangings</a></li>
+                        <li><a href="#accessories">Accessories</a></li>
+                        <li><a href="#books">Books</a></li>
+                    </ul>
+                </li>    
+                <li><a href="finalproject.html">About Us</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span class="anchor" id="tool"></span>
+                <span class="anchor" id="soil"></span>
+                <span class="anchor" id="pesticides"></span>
+                <span class="anchor" id="seed"></span>
+            </div>
+        </nav>
+        
+    </header>
+
+    <script>
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+</script>
+
+    <section class="header-grid">
+        <div class="header-card" style="width: 100%;">
+            <img src="images/shopbg.avif" alt="header">
+        </div>    
+    </section>
+
+
+    <h2 class="section-title">🌱 Pots & Plants 🌱</h2>
+    <span class="anchor" id="pots"></span>
+    <section class="product-grid">
+        <div class="product-card">
+            <img src="images/peace...........jpg" alt="Peace Lily">
+            <div class="info">
+                <h2>Peace Lily</h2>
+                <p>Price: <span class="price">Rs.750</span></p>
+                <p>Discount: <span class="discount">20% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+             <img src="images/snakeeeeeeeeeeeeeeeeeeeeee.jpg" alt="Snake Plant"> 
+            <div class="info">
+                <h2>Snake Plant</h2>
+                <p>Price: <span class="price">Rs.499</span></p>
+                <p>Discount: <span class="discount">15% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/aloe-vera-plant.webp" alt="Aloe Vera">
+            <div class="info">
+                <h2>Aloe Vera</h2>
+                <p>Price: <span class="price">Rs.679</span></p>
+                <p>Discount: <span class="discount">10% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/fern plant.webp" alt="Fern Plant">
+            <div class="info">
+                <h2>Fern Plant</h2>
+                <p>Price: <span class="price">Rs.1200</span></p>
+                <p>Discount: <span class="discount">25% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <img src="images/moneyyyyyyyyyyyyy.webp" alt="Money Plant">
+            <div class="info">
+                <h2>Money Plant</h2>
+                <p>Price: <span class="price">Rs.699</span></p>
+                <p>Discount: <span class="discount">22% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/cactus.jpeg" alt="Cactus">
+            <div class="info">
+                <h2>Cactus</h2>
+                <p>Price: <span class="price">Rs.880</span></p>
+                <p>Discount: <span class="discount">12% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/jadeeeeeeeeeee.jpeg" alt="Jade Plant">
+            <div class="info">
+                <h2>Jade Plant</h2>
+                <p>Price: <span class="price">Rs.920</span></p>
+                <p>Discount: <span class="discount">20% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/spider.webp" alt="Spider Plant">
+            <div class="info">
+                <h2>Spider Plant</h2>
+                <p>Price: <span class="price">Rs.1150</span></p>
+                <p>Discount: <span class="discount">18% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <img src="images/jasmine.jpeg" alt="jasmine Plant">
+            <div class="info">
+                <h2>Jasmine Plant</h2>
+                <p>Price: <span class="price">Rs.1200</span></p>
+                <p>Discount: <span class="discount">15% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <img src="images/bonsai.jpeg" alt="Bonsai Tree">
+            <div class="info">
+                <h2>Bonsai Tree</h2>
+                <p>Price: <span class="price">Rs.1099</span></p>
+                <p>Discount: <span class="discount">10% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+
+        
+        <div class="product-card">
+            <img src="images/zz.jpeg" alt="ZZ Plant">
+            <div class="info">
+                <h2>ZZ Plant</h2>
+                <p>Price: <span class="price">Rs.870</span></p>
+                <p>Discount: <span class="discount">20% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/levender plant.jpg" alt="Lavender Plant">
+            <div class="info">
+                <h2>Lavender Plant</h2>
+                <p>Price: <span class="price">Rs.1600</span></p>
+                <p>Discount: <span class="discount">25% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/bamboo.jpg" alt="Bamboo Plant">
+            <div class="info">
+                <h2>Bamboo Plant</h2>
+                <p>Price: <span class="price">Rs.1050</span></p>
+                <p>Discount: <span class="discount">18% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/orchid.webp" alt="Orchid">
+            <div class="info">
+                <h2>Orchid</h2>
+                <p>Price: <span class="price">Rs.1350</span></p>
+                <p>Discount: <span class="discount">15% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/pothossssssssssss.webp" alt="Pothos">
+            <div class="info">
+                <h2>Pothos</h2>
+                <p>Price: <span class="price">Rs.909</span></p>
+                <p>Discount: <span class="discount">20% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/swiss cheese plant.webp" alt="swiss cheese plant" style="height: 300px;">
+            <div class="info">
+                <h2>Swiss Cheese Plant</h2>
+                <p>Price: <span class="price">Rs.1190</span></p>
+                <p>Discount: <span class="discount">20% off</span></p>
+                <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="book-section">
+        <span class="anchor" id="books"></span>
+        <h2 class="section-title">📚 Books</h2>
+        <div class="product-grid">
+            <!-- Book Card  -->
+            <div class="product-card">
+                <img src="images/the fenlend garden.webp" alt="The Fenlend Garden">
+                <div class="info">
+                    <h2>The Fenlend Garden</h2>
+                    <p>Price: <span class="price">Rs.499</span></p>
+                    <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+                </div>
+            </div>
+    
+            <div class="product-card">
+                <img src="images/The Garden of Small Beginnings.webp" alt="The Garden Of Small Beginnings">
+                <div class="info">
+                    <h2>The Garden Of Small Beginnings</h2>
+                    <p>Price: <span class="price">Rs.720</span></p>
+                    <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <img src="images/the gardening book.webp" alt="The Gardening Book">
+                <div class="info">
+                    <h2>The Gardening Book</h2>
+                    <p>Price: <span class="price">Rs.600</span></p>
+                    <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/the southern garden.jpg" alt="The Southern Garden">
+                <div class="info">
+                    <h2>The Southern Garden</h2>
+                    <p>Price: <span class="price">Rs.480</span></p>
+                    <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+    
+    <section class="accessory-section">
+        <span class="anchor" id="accessories"></span>
+        <h2 class="section-title">🛠️ Accessories</h2>
+        <div class="product-grid">
+            <!-- Accessory Card  -->
+            <div class="product-card">
+                <img src="images/watering can...jpeg" alt="Watering Can">
+                <div class="info">
+                    <h2>Watering Can</h2>
+                    <p>Price: <span class="price">Rs.500</span></p>
+                    <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+                </div>
+            </div>
+    
+            <div class="product-card">
+                <img src="images/shovel.jpg" alt=" Hand-Held Shovel">
+                <div class="info">
+                    <h2> Hand-Held Shovel</h2>
+                    <p>Price: <span class="price">Rs.699</span></p>
+                    <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/glove....jpg" alt="Garden Work Gloves">
+                <div class="info">
+                    <h2>Garden Work Gloves</h2>
+                    <p>Price: <span class="price">Rs.650</span></p>
+                    <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+                </div>
+            </div>
+           
+            <div class="product-card">
+                <img src="images/stone.jpg" alt="Stones For Garden">
+                <div class="info">
+                    <h2>Stones For Garden</h2>
+                    <p>Price: <span class="price">Rs.899</span></p>
+                    <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+                </div>
+            </div>
+            <!-- <div class="product-card">
+                <img src="images/hedgeeeeeeeeeeeeeeee.jpg" alt="Hedge Shear">
+                <div class="info">
+                    <h2>Hedge Shear</h2>
+                    <p>Price: <span class="price">Rs.270</span></p>
+                    <button class="buy-now"><a href="buy now.html">Buy Now</a></button>
+                </div>
+            </div> -->
+           
+        </div>
+    </section>
+
+    <footer class="container-fluid">
+        <ul class="nav justify-content-center mt-4">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+            <li class="nav-item"><a  class="nav-link"href="shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="finalproject.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+            <li class="nav-item"><a  class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+        <p>&copy; 2024 Garden World | All Rights Reserved</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+      </footer>
+
+
+</body>
+</html>

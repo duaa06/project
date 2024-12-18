@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Garden World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffffff, #abd87a);
+            color: #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #000000;
+            font-size: 2rem;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .contact-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .card {
+
+            background-color: #4CAF50;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(118, 1, 1, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(64, 255, 0, 0.4);
+        }
+
+        .card .icon {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .form-container {
+
+            background-color: #4CAF50;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(118, 252, 0, 0.4);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea,
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(248, 248, 248, 0.865);
+            color: #000000;
+            outline: none;
+            transition: background 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            background: rgb(254, 255, 255);
+        }
+
+        button {
+            background-color: #ffffff;
+            color: #1e1e2f;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #006400;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(9, 255, 0, 0.2);
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 255, 198, 0.4);
+        }
+
+        @media (min-width: 768px) {
+            .contact-cards {
+                justify-content: space-between;
+            }
+        }
+
+        /* header  */
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .navbar .logo {
+            height: 60px;
+        }
+
+        .navbar .logo img {
+            height: 100%;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: burlywood;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            padding: 10px 0;
+            list-style: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: black;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: burlywood;
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            background: white;
+            height: 3px;
+            width: 25px;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                border-radius: 8px;
+                overflow: hidden;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .logo {
+                height: 40px;
+            }
+        }
+
+        /* footer */
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer ul.nav {
+            padding: 0;
+            list-style: none;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        footer .nav-item .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 5px 10px;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+
+        footer .nav-item .nav-link:hover {
+            color: #dff9d8;
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer p a {
+            color: white;
+            text-decoration: underline;
+            font-size: 0.9rem;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+
+        footer p a:hover {
+            color: #dff9d8;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: #4CAF50;
+                border-radius: 8px;
+                overflow: hidden;
+                width: calc(100% - 40px);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            footer ul.nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+
+        footer .nav-item .nav-link {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="width: 100%;">
+        <nav class="navbar container-fluid">
+            <div class="logo">
+                <img src="images/onlinelogomaker-110524-2348-9012-2000-transparent.png" alt="">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="menu.html" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="menu.html">Tools</a></li>
+                        <li><a href="menu.html">Soil and Fertilizer</a></li>
+                        <li><a href="menu.html">Pesticides for Plants</a></li>
+                        <li><a href="menu.html">Seed Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="shop.html" class="dropdown-toggle">Shop</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shop.html">Pots & Wall Hangings</a></li>
+                        <li><a href="shop.html">Accessories</a></li>
+                        <li><a href="shop.html">Books</a></li>
+                    </ul>
+                </li>
+                <li><a href="finalproject.html">About Us</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+    </header>
+
+    <h2>Contact Us For Any Queries</h2>
+
+    <div class="contact-section">
+        <div class="contact-cards">
+            <div class="card">
+                <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h4>Address</h4>
+                <p>Aptech Star Gate, Karachi, Pakistan</p>
+            </div>
+            <div class="card">
+                <div class="icon"><i class="fas fa-envelope"></i></div>
+                <h4>Email</h4>
+                <p>info@greenleaf.com</p>
+            </div>
+            <div class="card">
+                <div class="icon"><i class="fas fa-phone"></i></div>
+                <h4>Phone</h4>
+                <p>+92 123 4567890</p>
+            </div>
+            <div class="card">
+                <div class="icon"><i class="fas fa-clock"></i></div>
+                <h4>Working Hours</h4>
+                <p>Mon-Fri, 9 AM - 5 PM</p>
+            </div>
+        </div>
+        <div class="form-container">
+            <h3>Send Us a Suggestion</h3>
+            <form action="#">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Suggestion" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7238.628300689894!2d67.14229792356494!3d24.88726375864386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb339999415e0c3%3A0x36742eee0fd9c291!2sAptech%20Metro%20Star%20Gate!5e0!3m2!1sen!2s!4v1732442698362!5m2!1sen!2s"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+        <!-- footer -->
+
+        
+        <!-- footer end -->
+    </div>
+    
+    <footer class="footer container-fluid">
+        <ul class="nav justify-content-center mt-4">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="finalproject.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+        <p>&copy; 2024 Gardening Would | All Rights Reserved</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #ffffff, #abd87a);
+        }
+
+        .col:hover {
+            cursor: pointer;
+        }
+
+        header {
+            width: 100%;
+            background-color: #4CAF50;
+            background-image: url(images/pbi1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            height: 100vh;
+        }
+
+        .ban {
+            height: 100vh;
+
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .nav-item img.logo {
+            height: 80px;
+            margin-right: 550px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
+        .nav-link:hover {
+            color: burlywood;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            list-style: none;
+            padding: 10px 0;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-item {
+            color: black;
+            padding: 5px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-item:hover {
+            background-color: burlywood;
+            color: white;
+        }
+
+        .header-text {
+            position: relative;
+            background-color: white;
+            color: black;
+            opacity: 0.8;
+            margin: auto 50%;
+            margin-top: 70px;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 380px ;
+            max-width: 600px;
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .header-text h1 {
+            font-size: 40px;
+            font-weight: bolder;
+            margin-bottom: 10px;
+        }
+
+        .header-text h6 {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .btn-container {
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        
+
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-item img.logo {
+                height: 60px;
+                margin: 0 auto;
+            }
+
+            .header-text {
+                width: 90%;
+                font-size: 14px;
+            }
+
+            .header-text h1 {
+                font-size: 28px;
+            }
+
+           
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-item img.logo {
+                margin-bottom: 15px;
+            }
+
+            .header-text {
+                width: 95%;
+            }
+
+            .header-text h1 {
+                font-size: 24px;
+            }
+
+            .header-text h6 {
+                font-size: 12px;
+            }
+
+          
+        }
+
+
+        /* first row */
+
+
+
+        .video-container {
+
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+       
+
+        @media (max-width: 768px) {
+            video {
+                height: 300px;
+                width: 100%;
+            }
+
+       }
+
+        @media (max-width: 480px) {
+            video {
+                height: 250px;
+                width: 100%;
+            }
+        }
+
+        /* second row */
+
+        .second-row {
+    background-image: url(images/pbi3.jpg);
+    background-size: cover;
+    background-position: center;
+    text-transform: capitalize;
+    height: auto;
+    padding: 50px 0;
+    width: 100%;
+    box-shadow: 0 54px 55px rgba(0, 0, 0, 0.25), 0 -12px 30px rgba(0, 0, 0, 0.12), 
+                0 4px 6px rgba(0, 0, 0, 0.12), 0 12px 13px rgba(0, 0, 0, 0.17), 
+                0 -3px 5px rgba(0, 0, 0, 0.09);
+}
+
+.s-icon {
+    margin-top: 30px;
+}
+
+.s-img {
+    height: 80px;
+    width: 80px;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.s-img:hover {
+    border: 2px solid black;
+    opacity: 0.8;
+}
+
+.s-img img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+}
+
+.s-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.s-link:hover {
+    color: burlywood;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .s-img {
+        height: 70px;
+        width: 70px;
+    }
+
+    .s-img img {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .s-img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .s-img img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .second-row {
+        padding: 30px 0;
+    }
+}
+
+
+        /* second row end */
+
+        /* third row start */
+
+        .third-row {
+            margin-top: 100px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .first-heading {
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-bottom: 25px;
+        }
+
+        /* cards  row */
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+        .card-img-top {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+
+
+        .overlay h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .overlay h6 {
+            margin: 10px 0 0;
+            font-size: 1rem;
+        }
+
+        
+
+        /* third row end */
+
+        /* fourth row starts */
+
+        
+        .card-deck {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 100px; 
+            justify-content: center;
+            /* margin-left: 70px; */
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 30px;
+            
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .card img {
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            border-bottom: 3px solid #006400;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-body h5 {
+            font-size: 1.2rem;
+            color: #006400;
+            font-weight: bold;
+        }
+
+        .card-body p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .fourth-row {
+            margin-top: 150px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .headings {
+            margin-bottom: 40px;
+        }
+
+        .sec-heading {
+            font-weight: bold;
+            font-style: italic;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .insect {
+            margin-top: 50px;
+            font-weight: 500;
+
+        }
+
+        .headings h4 {
+            color: green;
+
+        }
+
+        .info2 img {
+            width: 450px;
+        }
+
+        .position {
+            margin-left: 400px;
+            margin-bottom: 40px;
+        }
+
+        .position .overlay {
+            width: 52%;
+        }
+
+        .col {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .img-thumbnail {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .col:hover .overlay {
+            opacity: 1;
+        }
+
+
+        /* fourth row ends */
+
+        /* fifth row starts */
+
+        .fifth-row {
+            margin-top: 150px;
+            padding-bottom: 50px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .info3 img {
+            width: 450px;
+        }
+
+        /*  fifth row ends */
+
+        /* sixth row */
+
+        .sixth-row {
+            margin-top: 150px;
+            padding-bottom: 50px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        .spacing {
+            margin-bottom: 50px;
+        }
+
+        /* end */
+
+        /* seventh-row start */
+
+        .seventh-row {
+            margin-top: 150px;
+            padding-bottom: 50px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+        /* seventh-row ends */
+
+        /* eighth-row starts */
+
+        .eighth-row {
+            margin-top: 150px;
+            padding-bottom: 50px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+
+
+        /* eighth-row ends */
+
+        /* footer */
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 0.9rem;
+        }
+
+        footer ul.nav {
+            padding: 0;
+            list-style: none;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        footer .nav-item .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 5px 10px;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+
+        footer .nav-item .nav-link:hover {
+            color: burlywood;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer p a {
+            color: white;
+            text-decoration: underline;
+            font-size: 0.9rem;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+
+        footer p a:hover {
+            color: burlywood;
+            text-decoration: none;
+        }
+
+
+        @media (max-width: 768px) {
+            footer ul.nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+
+            footer .nav-item .nav-link {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="container-fluid">
+        <nav class="navbar">
+            <ul class="nav justify-content-between align-items-center">
+                <li class="nav-item">
+                    <img src="images/onlinelogomaker-110524-2348-9012-2000-transparent.png" alt="Logo" class="logo">
+                </li>
+                <div class="nav-links d-flex flex-wrap">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="menu.html" role="button" aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="menu.html">Tools</a></li>
+                            <li><a class="dropdown-item" href="menu.html">Soil and Fertilizer</a></li>
+                            <li><a class="dropdown-item" href="menu.html">Pesticides for Plants</a></li>
+                            <li><a class="dropdown-item" href="menu.html">Seed Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="shop.html" role="button" aria-expanded="false">
+                            Shop
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="shop.html">Pots & Wall Hangings</a></li>
+                            <li><a class="dropdown-item" href="shop.html">Accessories</a></li>
+                            <li><a class="dropdown-item" href="shop.html">Books</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="finalproject.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FAQ.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+
+        <div class="ban header-text text-center">
+            <h4>A dream garden home</h4>
+            <h1>MAKE YOUR HOME LOOK</h1>
+            <h1 style="color: green;">LIVELY</h1>
+            <h6>
+                With the best gardeners and garden equipment, create a green dream home with our years of expertise at
+                an affordable price.
+            </h6>
+            <div class="btn-container mt-4">
+                <button type="button" class="btn btn-success"><a href="menu.html">Learn More</a></button>
+                <button type="button" class="btn btn-success"><a href="shop.html">Shop</a></button>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- header end -->
+
+    <!-- first row  start -->
+    <div class="video-container">
+        <video src="images/welcome video.mp4" autoplay muted loop playsinline></video>
+        <!-- <div class="content"></div> -->
+    </div>
+
+    <!-- first row end -->
+
+    <!-- second row start -->
+
+    
+    <div class="container-fluid second-row">
+        <div class="row justify-content-center text-center">
+            <!-- Gardening Basics -->
+            <div class="col-6 col-md-4 col-lg-2 s-icon">
+                <div class="s-img">
+                    <a href="#101"><img src="images/s-img1.jfif" class="img-fluid" alt="Gardening Basics"></a>
+                </div>
+                <a class="s-link" href="#101">Gardening Basics</a>
+            </div>
+    
+            <!-- Garden Problems -->
+            <div class="col-6 col-md-4 col-lg-2 s-icon">
+                <div class="s-img">
+                    <a href="#problem"><img src="images/s-img2.png" class="img-fluid" alt="Garden Problems"></a>
+                </div>
+                <a class="s-link" href="#problem">Garden Pests, Plant Diseases, & Other Problems</a>
+            </div>
+    
+            <!-- Annuals & Perennials -->
+            <div class="col-6 col-md-4 col-lg-2 s-icon">
+                <div class="s-img">
+                    <a href="#annper"><img src="images/s-img4.png" class="img-fluid" alt="Annuals & Perennials"></a>
+                </div>
+                <a class="s-link" href="#annper">How to grow annuals, perennials, shrubs</a>
+            </div>
+    
+            <!-- Vegetables & Herbs -->
+            <div class="col-6 col-md-4 col-lg-2 s-icon">
+                <div class="s-img">
+                    <a href="#veggies"><img src="images/s-img.png" class="img-fluid" alt="Vegetables & Herbs"></a>
+                </div>
+                <a class="s-link" href="#veggies">How to grow vegetables & herbs</a>
+            </div>
+    
+            <!-- Flowers -->
+            <div class="col-6 col-md-4 col-lg-2 s-icon">
+                <div class="s-img">
+                    <a href="#flowers"><img src="images/s-img5.png" class="img-fluid" alt="Flowers"></a>
+                </div>
+                <a class="s-link" href="#flowers">How to grow gorgeous flowers</a>
+            </div>
+    
+            <!-- Indoor Gardening -->
+            <div class="col-6 col-md-4 col-lg-2 s-icon">
+                <div class="s-img">
+                    <a href="#indoor"><img src="images/s-img6.webp" class="img-fluid" alt="Indoor Gardening"></a>
+                </div>
+                <a class="s-link" href="#indoor">How to garden indoors</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- second row end -->
+
+    <!-- third row start -->
+
+    <div class="container-fluid third-row">
+        <div class="container-fluid text-center info">
+            <span class="anchor" id="101"></span>
+            <h1 class="first-heading">Gardening Basics</h1>
+            <h5>Beginning gardeners are often intimidated by the process of how to start a garden and care for it
+                successfully—after all, there's a lot involved. From amending your soil with high-quality organic matter
+                to pruning shrubs, you'll find answers and advice for essential gardening tasks.</h5>
+            <div class="row r-1" >
+                <div class="col">
+                    <div class="card rc-1 ra" style="width: 18rem;">
+                        <img src="images/garden-soil.jpg" class="card-img-top" alt="...">
+                        <div class="overlay">
+                            <h3>Know Your Soil Type</h3>
+                            <h6> All soils are a mixture of mineral particles — primarily clay, sand, and silt. Often
+                                they will contain higher amounts of one type of particle relative to the others. That
+                                doesn’t make them bad growing mediums, but it will affect their density, drainage rate,
+                                and capacity to hold nutrients.</h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Garden Soil</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card rc-1 rb" style="width: 18rem;">
+                        <img src="images/garden-fertillizer.jpg" class="card-img-top" alt="...">
+                        <div class="overlay">
+                            <h3>Fertillizer</h3>
+                            <h6>It’s important to determine what your plants need in order to choose the right
+                                fertilizer. Pre-packaged fertilizers are formulated to meet different nutritional needs,
+                                with some specifically formulated for roses, trees and shrubs, vegetables, lawns, or
+                                bulbs to remove the guesswork.</h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Garden Fertilizer</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card rc-1 rc" style="width: 18rem;">
+                        <img src="images/composting.jpg" class="card-img-top" alt="...">
+                        <div class="overlay">
+                            <h3>Composting</h3>
+                            <h6>Active or hot composting speeds up decomposition by introducing oxygen, adding moisture, and providing the proper carbon-to-nitrogen ratio. This allows microorganisms to do
+                                their job more efficiently and raises the core temperature..</h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Composting</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card rc-1 rd" style="width: 18rem;">
+                        <img src="images/mulch.jpg" class="card-img-top" alt="...">
+                        <div class="overlay">
+                            <h3>Mulch</h3>
+                            <h6> Other benefits of mulch include controlling water runoff and erosion, improving soil
+                                tilth, reducing maintenance, and preventing germination of weed seeds. Mulch also adds
+                                curb appeal to beds and borders.</h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Mulch</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row r-2">
+                <div class="col">
+                    <div class="card rc-2 re" style="width: 18rem;">
+                        <img src="images/irrigation.jpg" class="card-img-top" alt="...">
+                        <div class="overlay">
+                            <h3>Irrigation</h3>
+                            <h6>Most plants need regular watering to survive, and even the most drought-tolerant ones
+                                will occasionally need a drink. Many factors play a role in determining how best to
+                                accommodate your garden’s water requirements.</h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Irrigation</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col ">
+                    <div class="card rc-2 rf" style="width: 18rem;">
+                        <img src="images/neem oil.jpg" class="card-img-top rci-2" alt="...">
+                        <div class="overlay">
+                            <h3>Neem Oil</h3>
+                            <h6>One of the biggest challenges of gardening is to control pests and diseases that can
+                                damage or kill indoor and outdoor plants.
+                                Neem oil is a commonly used natural remedy for both indoor and outdoor plants.
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">How to Use Neem Oil</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card rc-2 rg" style="width: 18rem;">
+                        <img src="images/grow plants.jpg" class="card-img-top" alt="...">
+                        <div class="overlay">
+                            <h3>Growing Plants</h3>
+                            <h6>Make shallow indentations in the media and sow the seed evenly.
+                                Lightly water the surface, and place the container in a warm area (not in direct
+                                sunlight).
+                                As seeds germinate, move seedlings to a well-lit area, such as under fluorescent lights.
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Grow Plants From Seed</h5>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card rc-2 rh" style="width: 18rem;">
+                        <img src="images/garden tools.jpg" class="card-img-top" alt="...">
+                        <div class="overlay">
+                            <h3>Garden Tools</h3>
+                            <h6>Gloves , Wheelbarrow , Spade , Garden Fork , Stirrup Hoe , Trowel , Hand Pruners ,
+                                Loppers , Rake </h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Essential Garden Tools</h5>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="row r-3" >
+                <div class="col">
+                    <div class="card rc-3 ri" style="width: 18rem;">
+                        <img src="images/prune shrubs.jpg" class="card-img-top" alt="...">
+                        <div class="overlay">
+                            <h3>Prune</h3>
+                            <h6>Pruning isn't just about cutting away branches; it also involves knowing when and how to
+                                make cuts that will benefit your shrubs the most. Whether you aim to shape your shrubs
+                                into neat, attractive forms or encourage a burst of flowers and fruits, proper pruning
+                                techniques can make all the difference.</h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">How to Prune Shurbs & Perennials</h5>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card rc-3 rj" style="width: 18rem;">
+                        <img src="images/container planting.jpg" class="card-img-top" alt="...">
+                        <div class="overlay">
+                            <h3>Container planting</h3>
+                            <h6>When selecting planters for a container garden you’ll want to pick something that suits
+                                your taste, allows for proper drainage and is an appropriate size and weight for where
+                                you plan to place it.</h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">How to Create A Container Planting</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card rc-3 rk" style="width: 18rem;">
+                        <img src="images/deadheading.jpg" class="card-img-top" alt="...">
+                        <div class="overlay">
+                            <h3>What's Deadheading</h3>
+                            <h6>Deadheading is the process of removing flowers that have finished blooming. In addition
+                                to improving the overall appearance, it allows plants to put more energy into producing
+                                more flowers, and it's the best way to control plants that self-seed. </h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">A Gardener's Guide To Deadheading</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card rc-3 rl" style="width: 18rem;">
+                        <img src="images/tools care.jpg" class="card-img-top" alt="...">
+                        <div class="overlay">
+                            <h3>Tools Care</h3>
+                            <h6>Tools not only need to be sharp, but also clean and sterile. Tools that are exposed to
+                                plants or soil with bacterial, fungal or insect infestations can spread those problems
+                                throughout the garden. It only takes a few minutes after each gardening session to take
+                                care of your tools and protect your garden the next time they are used.</h6>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">How To Care For Garden Tools</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- third row end -->
+
+    <!-- fourth row  -->
+
+    <div class="container-fluid fourth-row">
+        <div class="container-fluid text-center info2">
+            <span class="anchor" id="problem"></span>
+            <h1 class="sec-heading">PESTS, DISEASES, & OTHER GARDEN PROBLEMS</h1>
+                <h5>Learn how to safely and naturally deal with common pests, diseases, and weeds that can wreak havoc on
+                    your garden.<br>All gardeners, whether beginners or seasoned pros, deal with pests, diseases, and
+                    problems in their gardens. Some problems can be merely annoying, while others can cause major damage.
+                    Here are solutions for safely and naturally dealing with some common garden problems.</h5>
+                <h2 class="insect">INSECTS</h2>
+    
+                <div class="row headings">
+                    <div class="container card-deck">
+                        <div class="card">
+                            <img src="images/mosquito.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Mosquito Repellent Plants</h4>
+                                <p> The best thing you can do is prevent water from collecting and becoming stagnant , mosquitoescan lay hundreds of eggs even in a tiny spoonful of standing water.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Mosquito Repellent Plants</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/aphids.jpg" alt="">
+                            <div class="overlay">
+                                <h4>GET RID OF APHIDS BY HAND</h4>
+                                <p> Spray aphids off of plants with a strong stream of water from a garden hose , but it workswell on plants where you can use higher water pressure </p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GET RID OF APHIDS BY HAND</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/Grubs.jpg" alt="">
+                            <div class="overlay">
+                                <h4>GET RID OF GRUBS</h4>
+                                <p>Simply treat your lawn with a chemical grub control product, or grub killer, once or twice a year.Put on some garden gloves and knock them off of stems, leaves, flower buds, and into a bucket of soapy water to kill them. </p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GET RID OF GRUBS</h5>
+                            </div>
+                        </div>
+    
+                       
+                    </div>
+                </div> 
+                
+                <div class="row headings">
+                    <div class="container card-deck">
+                        <div class="card">
+                            <img src="images/whiteflies.jpg" alt="">
+                            <div class="overlay">
+                                <h4>HOW TO GET RID OF WHITEFLIES</h4>
+                                <p>Gently spray plants with water to dislodge whitefly eggs and nymphs. Because nymphs don’t move after the initial creeping phase, they will starve and die when removed from their food source. </p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">HOW TO GET RID OF WHITEFLIES</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/thrips.jpg" alt="">
+                            <div class="overlay">
+                                <h4>GET RID OF THRIPS ON PLANTS</h4>
+                                <p>Infestations can be difficult to control once thrips take hold. More than one remedy may benecessary to be effective against thrips, with repeat applications to disrupt the life cycle. </p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GET RID OF THRIPS ON PLANTS</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/leaf miner.jpg" alt="">
+                            <div class="overlay">
+                                <h4>HOW TO PREVENT LEAF MINERS</h4>
+                                <p>Leaf miners are often introduced to home gardens through new plants. When purchasing plantsfrom a nursery or garden center, carefully inspect the leaves for any leaf miner problem. </p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">HOW TO PREVENT LEAF MINERS</h5>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+                <div class="row headings">
+                    <div class="container card-deck">
+                        <div class="card">
+                            <img src="images/Beneficial insects.webp" alt="">
+                            <div class="overlay">
+                                <h4>Beneficial Insects</h4>
+                                <p> Common Beneficial Insects:
+                                    1: ASSASSIN BUG 2: BEES 3: DAMSEL BUG 4: GARDEN SPIDER 5: GREEN LACEWING 6: GROUND BEETLE 7:
+                                    HOVERFLY 8: LADYBUG 9: PARASITIC WASP 10: PRAYING MANTIS 11: SOLDIER BEETLE 12: TACHINID FLY </p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Beneficial Insects</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/budworms.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Budworms</h4>
+                                <p>Themost effective method of removing them is to throw on a pair of garden gloves and pick them off by hand. Budworms are nocturnal feeders, so hunt for them at dusk or early in the evening when they are most active. </p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">BUDWORMS</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/mealybugs.jpg" alt="">
+                            <div class="overlay">
+                                <h4>GET RID OF MEALYBUGS</h4>
+                                <p> Spray with water:
+                                    For lighter infestations, mealybug adults, nymphs and eggs can be dislodged with a gentlespray of water. Take care not to spray too hard to avoid damage to plant tissues. </p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GET RID OF MEALYBUGS</h5>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+                <h2>DISEASES & OTHER PROBLEMS</h2>
+                <div class="row headings">
+                    <div class="container card-deck">
+                        <div class="card">
+                            <img src="images/black-spot.jpg" alt="">
+                            <div class="overlay">
+                                <h4>TREAT BLACK SPOT</h4>
+                                <p> 1.Start treating your roses early in the growing season.
+                                    2.Respray them every week or two and after a heavy rain.
+                                    3.Be sure to spray the entire plant, including the tops and bottoms of the leaves as well as
+                                    the stems.
+                                    4.Apply a dormant spray over winter to smother overwintering fungal spores.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">TREAT BLACK SPOT</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/yellow-leaves.jpg" alt="">
+                            <div class="overlay">
+                                <h4>CAUSE OF YELLOW LEAVES</h4>
+                                <p>Too much water is a common problem that can lead to root rot. Too little water can alsocause problems for tomatoes. Before the yellow leaves stand out due to incorrect watering,you may notice wilting and brown edges.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">CAUSE OF YELLOW LEAVES</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/anthracnose.jpg" alt="">
+                            <div class="overlay">
+                                <h4>GET RID OF ANTHRACNOSE</h4>
+                                <p>The most effective control method is to promptly prune off diseased portions of the plant and place the waste in a bag for disposal. For trees, prune to remove infected twigs and branches and discard leaves lost to defoliation to reduce the potential for reinfection.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">GET RID OF ANTHRACNOSE</h5>
+                            </div>
+                        </div>
+    
+                    </div>    
+                </div>
+    
+                <div class="row headings">
+                    <div class="container card-deck">
+                        <div class="card">
+                            <img src="images/powdery-mildew.jpg" alt="">
+                            <div class="overlay">
+                                <h4>POWDERY MILDEW TREATMENT</h4>
+                                <p>Apply once a week for three to four weeks, then wait to see results. Reapply as needed. Baking soda solution: Mix 1 tablespoon baking soda and ½ teaspoon liquid soap such asCastile soap (not detergent) in 1 gallon of water.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">POWDERY MILDEW TREATMENT</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/botrytis-blight.jpg" alt="">
+                            <div class="overlay">
+                                <h4>TREATMENT OF BOTRYTIS</h4>
+                                <p>If a gray mold infection breaks out in your garden, the most effective control method is to promptly prune off diseased portions of the plant and place them in a bag for disposal. Don’t compost infected plants because the spores can remain active.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">TREATMENT OF BOTRYTIS</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/handful-of-weeds-.jpg" alt="">
+                            <div class="overlay">
+                                <h4>PREVENT COMMON GARDEN WEED</h4>
+                                <p>Weeds fall into categories just like other plants: annual or perennial, and broadleaf orgrassy. Determining which group you’re targeting will help determine how and when to treat them, giving you better weed control.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">PREVENT COMMON GARDEN WEED</h5>
+                            </div>
+                        </div>
+    
+                    </div>    
+                </div>
+    
+        </div>
+    </div>
+
+
+    <!-- fourth row ends -->
+
+    <!-- fifth row starts -->
+
+    <div class="container-fluid fifth-row">
+        <div class="container-fluid text-center info3">
+            <span class="anchor" id="annper"></span>
+            <h1 class="sec-heading">How to grow annuals,pernennial,shurbs</h1>
+                <h5>Learn how to grow different types of plants and their uses in the garden. Understand the differences between them and what growing conditions they do best in.</h5>
+    
+                <div class="row headings">
+                    <div class="container card-deck">
+                        <div class="card">
+                            <img src="images/annuals.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Annual Flowers</h4>
+                                <p>Annuals are easy to grow and offer brightly colored flowers for instant impact. They are versatile and can be grown in garden beds, hanging baskets or containers, If properly planted and cared for, many annuals will bloom nonstop from planting to frostColor choices !</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Annual Flowers</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/perennials.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Perennials Flowers</h4>
+                                <p>Perennials are plants that come back year after year. Some are evergreen and keep their foliage through the winter; others go dormant, dying back to the ground and will send up new shoots in the spring.They usually only bloom for one season each year, although there are some re-blooming and ever-blooming varieties.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Perennials Flowers</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/shurbs.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Shrubs</h4>
+                                <p> Mature size:
+                                    Don’t choose a shrub that will outgrow its space because it’s only going to create more work for you down the road. Keep in mind that shrubs are fairly permanent elements of a garden and can be difficult to move. Dwarf or compact varieties are great choices for most residential landscapes.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Shrubs</h5>
+                            </div>
+                        </div>
+    
+                    </div>    
+                </div> 
+                
+        </div>
+    </div>
+
+    <!-- fifth row ends -->
+
+    <!-- sixth-row start -->
+
+    <div class="container-fluid sixth-row">
+        <div class="container-fluid text-center info4">
+            <span class="anchor" id="veggies"></span>
+            <h1 class="sec-heading">How to grow vegetables & herbs</h1>
+                <h5>Many beginning gardeners find the process of growing their own food rewarding, and not as difficult as they anticipated. Whether you’re looking to start with just a few tomatoes or you’re planning to create a full-fledged kitchen garden, doing your homework on how to plant, care for, and harvest your crops will be valuable.</h5>
+    
+                <div class="row headings">
+                    <div class="container card-deck">
+                        <div class="card">
+                            <img src="images/start veggies garden.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Start a Vegetable Garden</h4>
+                                <p>
+                                    Narrow your wish list down to a few varieties that are easiest to grow. Keep it simple so you don’t become overwhelmed. Familiarize yourself with the vegetables you want to grow, as well as what grows well together. There are many online resources as well as gardening books.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Start a Vegetable Garden</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/container veggies.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Container Gardening</h4>
+                                <p>If growing your own vegetables and herbs sounds appealing but you don’t have a lot of space, containers are a viable alternative to the traditional kitchen plot. All you need is a balcony, patio, deck, or other small space that gets at least 6 hours of direct sun.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Container Gardening</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/bed garden.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Raised Bed Gardens</h4>
+                                <p>Raised bed gardens are one of the most productive ways to grow your own food. They give you better control over the soil conditions and allow for quick and easy harvesting of your crops.You’ll just need a few tools and some hard workers. See a step-by-step slideshow of one of ourcolumnists creating a raised bed garden.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Raised Bed Gardens</h5>
+                            </div>
+                        </div>
+    
+                    </div>    
+                </div> 
+    
+                <div class="row headings">
+                    <div class="container card-deck">
+                        <div class="card">
+                            <img src="images/spring veggies.jpg" alt="">
+                            <div class="overlay">
+                                <h4>SPRING VEGETABLES</h4>
+                                <p> Want to get a jump on your vegetable garden? Here’s a round-up of cool-season vegetables to grow this spring :  1.Artichoke
+                                    2.Kale
+                                    3.Beets
+                                    4.Leeks
+                                    5.Broccoli
+                                    6.Lettuce
+                                    7.Cabbage
+                                    8.Peas
+                                    9.Carrots
+                                    10.Radishes
+                                    11.Cauliflower
+                                    12.Spinach
+                                    13.Celery
+                                    14.Swiss Chard
+                                    15.Collards
+                                    16.Turnips</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">SPRING VEGETABLES</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/indoor outdoor.jpg" alt="">
+                            <div class="overlay">
+                                <h4>INDOOR AND OUTDOOR HERB GARDENS</h4>
+                                <p>Herbs have been grown and used for thousands of years for their culinary and medicinal qualities. Their ornamental and aromatic qualities lend aesthetic beauty and fragrance to any landscape. Once you’ve tasted the difference between fresh and dried herbs, you’ll never go back.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">INDOOR AND OUTDOOR HERB GARDENS</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/herb at home.jpg" alt="">
+                            <div class="overlay">
+                                <h4>EASY HERBS TO GROW</h4>
+                                <p>Many herbs are easy to grow even if you don’t have a dedicated garden space. With the convenience of growing herbs at home, you can harvest them whenever you want. 1.BASIL
+                                    2.ROSEMARY
+                                    3.OREGANO
+                                    4.LAVENDER
+                                    5.LEMON VERBENA
+                                    6.PARSLEY
+                                    7.SAGE
+                                    8.FRENCH TARRAGON
+                                    9.THYME
+                                    10.CHIVES
+                                    11.MINT
+                                    12.CILANTRO
+                                    </p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">EASY HERBS TO GROW</h5>
+                            </div>
+                        </div>
+    
+                    </div>    
+                </div> 
+        </div>
+    </div>
+
+    <!-- sixth-row ends -->
+
+    <!-- seventh-row start -->
+
+    <div class="container-fluid seventh-row">
+        <div class="container-fluid text-center info5">
+            <span class="anchor" id="flowers"></span>
+            <h1 class="sec-heading">HOW TO GROW GORGEOUS FLOWERS</h1>
+                <h5>Starting a flower garden doesn’t have to be daunting—whether you choose to grow from seed or young plants. Plan your own flower garden, get suggestions for easy-to-grow flowers, and soon you’ll havelovely flowers everywhere.</h5>
+    
+                <div class="row headings">
+                    <div class="container card-deck">
+                        <div class="card">
+                            <img src="images/flower garden.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Start a Flower Garden</h4>
+                                <p>If you’ve always dreamed of having a gorgeous flower garden, now is the time to make it happen. Starting a flower garden is both fun and rewarding. Follow these guidelines for beginners and you’ll be off to a great start.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Start a Flower Garden</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/flower beginners.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Flowers for Beginners to Grow</h4>
+                                <p>These easy-to-grow flowers will help you gain confidence in the garden. Easy annuals such as sunflowers and zinnias are simple to start from seed, perennials require little care and return year after year, and bulbs are practically foolproof when planted properly.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Easy Flowers for Beginners to Grow</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/rose care.jpg" alt="">
+                            <div class="overlay">
+                                <h4> A Beginner’s Guide to Growing Roses</h4>
+                                <p>Rose care is easier than you think—anyone can grow them successfully. Plant your roses in a sunny location with good drainage. Fertilize them regularly for impressive flowers. Water them evenly to keep the soil moist. Prune established rose bushes in early spring.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"> A Beginner’s Guide to Growing Roses</h5>
+                            </div>
+                        </div>
+    
+    
+                    </div>    
+                </div> 
+        </div>
+    </div>
+
+    <!-- seventh-row ends -->
+
+    <!-- eighth-row starts -->
+
+    <div class="container-fluid eighth-row">
+        <div class="container-fluid text-center info6">
+            <span class="anchor" id="indoor"></span>
+            <h1 class="sec-heading">HOW TO GARDEN INDOORS</h1>
+                <h5>When winter arrives, your gardening doesn’t have to stop. Try your hand at growing a few plants indoors and you’ll find that it isn’t too hard. Learn how to keep your houseplants happy with proper care and placement.</h5>
+    
+                <div class="row headings">
+                    <div class="container card-deck">
+                        <div class="card">
+                            <img src="images/indoor plants.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Best Indoor Plants</h4>
+                                <p>Anyone can master indoor gardening by choosing good indoor plants for the different microenvironments in the home, whether it’s a warm, humid room or a drafty low-light corner. And some indoor plants are tough enough to survive just about anywhere.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Best Indoor Plants</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/terrarium.jpg" alt="">
+                            <div class="overlay">
+                                <h4>DIY Terrarium Tip</h4>
+                                <p>Terrariums make it possible to grow things in places that aren't exactly conducive . A closed terrarium becomes a biosphere where humidity is elevated, plants are self-watered and the mini ecosystem just chugs along on autopilot with minimal intervention.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">DIY Terrarium Tip</h5>
+                            </div>
+                        </div>
+    
+                        <div class="card">
+                            <img src="images/window garden.jpg" alt="">
+                            <div class="overlay">
+                                <h4>Window Garden</h4>
+                                <p>Our columnist Kevin Lee Jacobs shows off his window gardens, which change throughout the winter, and explains exactly how to create more shelf space for your houseplants.</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Window Garden</h5>
+                            </div>
+                        </div>
+    
+    
+                    </div>    
+                </div> 
+        </div>
+    </div>
+
+    <!-- eighth-row ends -->
+
+
+    <!-- footer -->
+
+    <footer class="container-fluid">
+        <ul class="nav justify-content-center mt-4">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="finalproject.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="FAQ.html">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+        <p>&copy; 2024 Garden World | All Rights Reserved</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+    </footer>
+
+    <!-- footer end -->
+
+
+    <script>
+        function toggleshow(event) {
+            const button = event.target;
+
+            const cardContent = button.parentElement.querySelector("div[id^='para']");
+
+            if (cardContent.style.display === "none" || !cardContent.style.display) {
+                cardContent.style.display = "block";
+            } else {
+                cardContent.style.display = "none";
+            }
+        }
+
+        document.querySelectorAll(".btn-success").forEach(button => {
+            button.addEventListener("click", toggleshow);
+        });
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
